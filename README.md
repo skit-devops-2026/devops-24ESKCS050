@@ -4,7 +4,7 @@
 
 | Roll No.   | Name         | GitHub username    |
 | ---------- | ------------ | ------------------ |
-| 24ESKCS051 | Ankit Sharma | ankit-sharma-cyber |
+| 24ESKCS050 | Ankit P|  ankitpravin4-hue|
 
 ## About
 
