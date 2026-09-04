@@ -1,0 +1,13 @@
+{
+  "name": "devops-24eskcs050",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "build": "echo \"Build placeholder - swap for real bundler once frontend stack is finalized\" && exit 0",
+    "dev": "echo \"Run placeholder - swap once app entrypoint is finalized\" && exit 0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
