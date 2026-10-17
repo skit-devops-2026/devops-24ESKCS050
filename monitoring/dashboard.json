@@ -1,0 +1,43 @@
+{
+  "title": "Campus Room Booking - App Metrics",
+  "description": "Grafana dashboard for the devops-24ESKCS050 app. Import this JSON in Grafana (Dashboards > New > Import) with a Prometheus data source pointed at the /metrics endpoint scraped per monitoring/prometheus.yml.",
+  "panels": [
+    {
+      "title": "HTTP requests per second",
+      "type": "graph",
+      "targets": [
+        { "expr": "sum(rate(http_requests_total[1m])) by (path, status)" }
+      ]
+    },
+    {
+      "title": "HTTP request duration (p95)",
+      "type": "graph",
+      "targets": [
+        { "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, path))" }
+      ]
+    },
+    {
+      "title": "Process CPU usage",
+      "type": "graph",
+      "targets": [
+        { "expr": "rate(process_cpu_seconds_total[1m])" }
+      ]
+    },
+    {
+      "title": "Process memory (resident set size)",
+      "type": "graph",
+      "targets": [
+        { "expr": "process_resident_memory_bytes" }
+      ]
+    },
+    {
+      "title": "Event loop lag",
+      "type": "graph",
+      "targets": [
+        { "expr": "nodejs_eventloop_lag_seconds" }
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "version": 1
+}
