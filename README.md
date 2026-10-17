@@ -13,7 +13,7 @@ Zenith is a college management website designed to manage and organize college r
 ## Tech stack
 
 - Frontend: HTML, CSS, JavaScript, React
-- Backend: Not specified
+- Backend: Node.js (Express)
 - Database: Not specified
 
 ## Running locally
@@ -23,10 +23,39 @@ make install
 make run
 ```
 
+Serves the site (and the `/health` and `/metrics` endpoints below) at `http://localhost:3000`.
+
+## Running with Docker
+
+```bash
+make docker-build
+make docker-up
+```
+
+or directly:
+
+```bash
+docker compose up --build
+```
+
 ## Live URL
 
-<Add once M5 is done. Until then, leave as is.>
+https://devops-24eskcs050.onrender.com
 
 ## Health endpoint
 
 `GET /health` returns the running commit SHA. See `Makefile` and the milestone sheet for why this is required.
+
+## Metrics
+
+`GET /metrics` returns Prometheus-format metrics (HTTP request counts/latency plus default Node.js process metrics). See `monitoring/prometheus.yml` for the scrape config and `monitoring/dashboard.json` for a Grafana dashboard you can import.
+
+## Kubernetes
+
+Manifests are under `k8s/` (`deployment.yaml`, `service.yaml`). To run locally with `kind`:
+
+```bash
+kind create cluster
+kubectl apply -f k8s/
+kubectl get pods
+```
