@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 app.get('/health', (req, res) => {
   res.json({
     status: 'ok',
-    commit: process.env.GIT_SHA || 'unknown',
+    commit: process.env.GIT_SHA || process.env.RENDER_GIT_COMMIT || 'unknown',
     uptimeSeconds: process.uptime(),
   });
 });
