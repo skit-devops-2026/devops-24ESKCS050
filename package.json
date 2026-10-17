@@ -5,9 +5,14 @@
   "scripts": {
     "test": "jest",
     "build": "echo \"Build placeholder - swap for real bundler once frontend stack is finalized\" && exit 0",
-    "dev": "echo \"Run placeholder - swap once app entrypoint is finalized\" && exit 0"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "prom-client": "^15.1.3"
   }
 }

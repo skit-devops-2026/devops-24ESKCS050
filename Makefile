@@ -10,11 +10,10 @@ build:
 	npm run build
 
 run:
-	npm run dev
+	npm start
 
-# Needed from M4 onwards
 docker-build:
-	@echo "TODO: docker build for frontend and backend" && exit 1
+	docker build --build-arg GIT_SHA=$$(git rev-parse HEAD) -t devops-24eskcs050:local .
 
 docker-up:
 	docker compose up --build
